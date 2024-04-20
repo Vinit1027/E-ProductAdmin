@@ -1,3 +1,16 @@
+Created a Full Stack E-Commerce Project called E-Products. 
+
+This Project consists of 2 Front-End websites i.e Admin and E-Product created using Reactjs and One Backened RestAPI created using Nodejs, Expressjs (code) and Mongodb(server). 
+
+This is the E-commerce Admin interaction Webpage.
+
+Live Site : https://e-product-admin.onrender.com
+
+
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
