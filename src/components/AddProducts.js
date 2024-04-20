@@ -34,11 +34,7 @@ const AddProducts = () => {
 
   const getCategorydata = async ()=> {
 
-  await axios.get('https://e-products-api.onrender.com/apiv1/category/get-category',
-    {
-      withCredentials:true,
-      credentials: "include"
-    })
+  await axios.get('https://e-products-api.onrender.com/apiv1/category/get-category')
     .then( response => response)
     .then(data => setCatData(data.data.data))
   }

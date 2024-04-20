@@ -15,11 +15,7 @@ const ProductList = () => {
 
   const getProductdata = async ()=> {
 
-  await axios.get('https://e-products-api.onrender.com/apiv1/products/get-products',
-    {
-      withCredentials:true,
-      credentials: "include"
-    })
+  await axios.get('https://e-products-api.onrender.com/apiv1/products/get-products')
     .then( response => response)
     .then(data => setProdData(data.data.data))
   }

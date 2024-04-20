@@ -38,11 +38,7 @@ const UpdateProducts = () => {
 
   const getProductdata = async ()=> {
 
-  await axios.get('https://e-products-api.onrender.com/apiv1/products/get-products',
-    {
-      withCredentials:true,
-      credentials: "include"
-    })
+  await axios.get('https://e-products-api.onrender.com/apiv1/products/get-products')
     .then( response => response)
     .then(data => setProdData(data.data.data))
   }
@@ -59,11 +55,7 @@ const UpdateProducts = () => {
 
   const getCategorydata = async ()=> {
 
-  await axios.get('https://e-products-api.onrender.com/apiv1/category/get-category',
-    {
-      withCredentials:true,
-      credentials: "include"
-    })
+  await axios.get('https://e-products-api.onrender.com/apiv1/category/get-category')
     .then( response => response)
     .then(data => setCatData(data.data.data))
   }
@@ -94,11 +86,6 @@ const UpdateProducts = () => {
       headers: {
         'Content-Type' : 'multipart/form-data',
       }
-    },
-    {
-
-      withCredentials:true,
-      credentials: "include"
     })
     .then(response => response)
     .then(resdata => {
@@ -207,10 +194,6 @@ const UpdateProducts = () => {
       headers: {
         'Content-Type' : 'multipart/form-data',
       }
-    },
-    {
-      withCredentials:true,
-      credentials: "include"
     })
     .then(response => response)
     .then(resdata => console.log(resdata))

@@ -53,10 +53,6 @@ const AddCategories = () => {
       headers: {
         'Content-Type' : 'multipart/form-data',
       }
-    },
-    {
-      withCredentials:true,
-      credentials: "include"
     })
     .then(response => response)
     .then(resdata => console.log(resdata))
