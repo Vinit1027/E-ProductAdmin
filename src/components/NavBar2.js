@@ -110,7 +110,7 @@ export default function PersistentDrawerLeft() {
   };
 
   const HandleLogOut = ()=> {
-    Cookies.remove('admin');
+    localStorage.removeItem('token');
     navigate('/login');
   }
 

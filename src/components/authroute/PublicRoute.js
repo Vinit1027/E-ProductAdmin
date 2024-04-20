@@ -5,7 +5,7 @@ import { Navigate } from "react-router-dom";
 
 const PublicRoute = ({children}) => {
 
-    const [auth, setAuth] = useState({ admin : Cookies.get('admin')});
+    const [auth, setAuth] = useState({ admin : localStorage.getItem('token')});
 
     console.log(auth.admin)
   return (

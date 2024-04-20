@@ -4,7 +4,7 @@ import Cookies from 'js-cookie';
 import { Navigate } from "react-router-dom";
 
 const ProtectedRoute = ({children}) => {
-    const [auth, setAuth] = useState({ admin : Cookies.get('admin')});
+    const [auth, setAuth] = useState({ admin : localStorage.getItem('token')});
 
     console.log(auth.admin)
   return (
