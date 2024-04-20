@@ -2,9 +2,14 @@ import React from 'react';
 import { useEffect, useState } from 'react';
 import Container from '@mui/material/Container';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
+
 
 const UpdateCategory = () => {
 
+    const navigate = useNavigate();
+
+    const [refresh , setRefresh] = useState('');
 
     const [catdata, setCatData] = useState([]);
 
@@ -29,7 +34,7 @@ const UpdateCategory = () => {
 
     getCategorydata();
 
-  },[])
+  },[refresh])
 
 
   const handleEdit = (id)=> {
@@ -89,6 +94,12 @@ const UpdateCategory = () => {
     .then(resdata => console.log(resdata))
     .catch((er) => console.log(er))
 
+    setCatid('')
+
+    setRefresh(1);
+
+
+
 
   }
 
@@ -107,7 +118,7 @@ const UpdateCategory = () => {
     })
     .catch((er) => console.log(er))
     
-    window.location.reload()
+    setRefresh(1);
   }
 
 

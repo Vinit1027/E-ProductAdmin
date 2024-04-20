@@ -15,6 +15,8 @@ import { useNavigate } from 'react-router-dom'
 const AddProducts = () => {
 
     const navigate = useNavigate();
+
+  const [refresh , setRefresh] = useState('');
   
 
   const [catdata, setCatData] = useState([]);
@@ -47,7 +49,7 @@ const AddProducts = () => {
 
     getCategorydata();
 
-  },[])
+  },[refresh])
 
   const Authorize = String(localStorage.getItem('token'))
 
@@ -117,7 +119,7 @@ const AddProducts = () => {
     .then(resdata => console.log(resdata))
     .catch((er) => console.log(er))
 
-    window.location.reload();
+    navigate('/products');
 
 
 

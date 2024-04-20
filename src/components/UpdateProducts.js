@@ -13,6 +13,8 @@ import axios from 'axios';
 const UpdateProducts = () => {
 
 
+  const [refresh , setRefresh] = useState('');
+
   const [Proddata, setProdData] = useState([]);
 
   const [catdata, setCatData] = useState([]);
@@ -47,7 +49,7 @@ const UpdateProducts = () => {
 
     getProductdata();
 
-  },[])
+  },[refresh])
 
   console.log(Proddata)
 
@@ -67,7 +69,7 @@ const UpdateProducts = () => {
   },[])
 
 
-  const Authorize = String(Cookies.get('admin'))
+  const Authorize = String(localStorage.getItem('token'))
 
 
 
@@ -93,7 +95,7 @@ const UpdateProducts = () => {
     })
     .catch((er) => console.log(er))
     
-    window.location.reload();
+    setRefresh(1);
 
 
   }
@@ -200,6 +202,9 @@ const UpdateProducts = () => {
     .catch((er) => console.log(er))
 
     setProdid('');
+
+    setRefresh(1);
+
 
 
 

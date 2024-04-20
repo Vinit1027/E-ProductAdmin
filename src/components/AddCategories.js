@@ -3,8 +3,11 @@ import { useState, useEffect } from 'react';
 import Container from '@mui/material/Container';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom'
 
 const AddCategories = () => {
+
+  const navigate = useNavigate();
 
 
   const [name, setName] = useState('');
@@ -58,7 +61,7 @@ const AddCategories = () => {
     .then(resdata => console.log(resdata))
     .catch((er) => console.log(er))
 
-    window.location.reload();
+    navigate('/categorylist');
 
   }
 
