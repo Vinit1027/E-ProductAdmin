@@ -9,8 +9,12 @@ import Container from '@mui/material/Container';
 import axios from 'axios';
 import CloudUploadIcon from '@mui/icons-material/CloudUpload';
 import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom'
+
 
 const AddProducts = () => {
+
+    const navigate = useNavigate();
   
 
   const [catdata, setCatData] = useState([]);
@@ -45,7 +49,7 @@ const AddProducts = () => {
 
   },[])
 
-  const Authorize = String(Cookies.get('admin'))
+  const Authorize = String(localStorage.getItem('token'))
 
 
   const handleCat = (e)=> {
@@ -108,10 +112,6 @@ const AddProducts = () => {
         'Content-Type' : 'multipart/form-data',
         'Authorization': Authorize
       }
-    },
-    {
-      withCredentials:true,
-      credentials: "include"
     })
     .then(response => response)
     .then(resdata => console.log(resdata))
